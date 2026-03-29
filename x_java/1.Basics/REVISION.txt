@@ -1,0 +1,43 @@
+1.units in java = L-I-V (Litral Identifier Var)
+2.Data Types 
+   p and Non-P 
+   a.p bulcharbit shortintlong floatdouble
+   b.Non-P ( Sting-Class-Array-Object-Inteface )
+
+3. 1- PCname{} ( public class filename )
+   2- PSVM(s[]as) (public static void main(Sting[]args))
+
+4. next() for input 
+   Types:
+    // 5
+    //
+ b  // nextByte()     
+ c  //|--next()
+ _  //|--nextLine()
+ b  // nextBoolean()
+    // ..
+ s  // nextShort()
+ i  // nextInt()
+ l  // nextLong()
+    // ..
+ f  // nextFolat()
+ d  // nextDouble()
+
+5. TYPE CASTING 
+ =================================
+ refer:- JB_7_TypeCasting.java 
+ =================================
+ a. type conversion / widnign / implisit tcwi (2 rules)   bite->short->int->float->long->-double
+   1. int a =3;     float b = a ;    
+   2. float x = nextINt(); 
+   3. float sum = a + b + x;
+  in all the above examples int get stored into float. hence converison/widning/implisite conversion is happen.
+
+   
+
+ b. type casting / narrowing / explisit
+   1. float a3 = 23.234f, int b3 = (int) a3; (float is stored into int loosing .23 even .99999 will become 0.)
+   2. char ch = 'a', int charIntoCharCodeIntiger = ch; ( here type casting done between Non-Compatibles. char a into int =96(charcode))
+
+
+ 
