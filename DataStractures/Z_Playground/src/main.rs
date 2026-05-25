@@ -1,3 +1,0 @@
-mod ll;
-
-fn main() {}
