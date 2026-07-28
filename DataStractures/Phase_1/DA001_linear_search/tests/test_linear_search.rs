@@ -1,8 +1,8 @@
 use DA001_linear_search::linear_search::{
     char::{Char, Cordanets, get_position},
     linear_search,
-    linear_search_all,
-    linear_search_res,
+    search::{linear_search_all, linear_search_res},
+    x_linear_one,
 };
 use pretty_assertions::assert_eq;
 use test_case::test_case;
@@ -44,4 +44,23 @@ fn test_linear_search_res<T: Ord>(expected: Option<usize>, arr: &[T], item: &T) 
             assert_eq!(err, error_string)
         }
     };
+}
+
+#[test_case(2, &["asd", "asdf", "tr"], &"tr" )]
+#[test_case(3, &["a", "b", "c", "d", "google", "zoo"], &"d" )]
+#[test_case(0, &[1, 2, 3, 4], &1)]
+#[test_case(26 , &[ Char::A, Char::B, Char::C, Char::D, Char::E, Char::F, Char::G, Char::H, Char::I, Char::J, Char::K, Char::L, Char::M, Char::N, Char::O, Char::P, Char::Q, Char::R, Char::S, Char::T, Char::U, Char::V, Char::W, Char::X, Char::Y, Char::Z, Char::ZZ ], &Char::ZZ )]
+fn test_x_linear<T: Ord>(expected: usize, arr: &[T], item: &T) {
+    let res = x_linear_one(item, arr);
+    //
+    assert_eq!(res.unwrap(), expected);
+}
+
+#[test_case( &[1, 2, 3, 4, 11], &5 )]
+#[test_case( &[1, 2, 3, 4], &5 )]
+fn test_x_linear_none<T: Ord>(arr: &[T], item: &T) {
+    let string = "Not found".to_string();
+    let res = x_linear_one(item, arr);
+
+    assert_eq!(res.err().unwrap(), string);
 }
