@@ -1,0 +1,6 @@
+[package]
+name = "a_001_arrays_in_rust"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
