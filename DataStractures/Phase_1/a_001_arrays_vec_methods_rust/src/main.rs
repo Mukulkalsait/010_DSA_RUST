@@ -4,6 +4,14 @@ fn main() {
 
     println!(" len():{}\n is_empty():{}\n contains(&32):{}", array.len(), array.is_empty(), array.contains(&23));
 
+    // Y:
+    // array.get(index)
+    // array.sort();
+    // array.swap(a, b);
+    // array.reverse();
+    // &array[..4];
+    // array.chunks(chunk_size);
+
     if let Some(index_val) = array.get(2) {
         println!(" index_val:{}", index_val)
     } else {
@@ -31,6 +39,22 @@ fn main() {
     println!("------------------------------------------ VECTORS ------------------------------------------");
 
     let vec: Vec<i32> = array.iter().filter_map(|x| if *x > 2 { Some(*x * 3) } else { None }).collect();
+
+    // B:
+    // array.iter().map(|x| x * 3).collect();
+    // array.iter().filter_map(|&x| if x > 10 { Some(x + 32) } else { Some(x * 12) }).collect();
+    // vec.push(value);
+    // vec.pop();
+    // vec.insert(index, element);
+    // vec.swap_remove(index);
+    // vec.clear();
+    // vec.resize(new_len, value);
+    // vec.reverse();
+    // vec.truncate(len);
+    // vec.split_off(at);
+    // vec.append(other);
+    // vec.extend(iter);
+    // vec.retain(f);
 
     let vector_double: Vec<i32> = array.iter().map(|x| x * 3).collect(); // convert array into vec.
     println!(" vector_double:{:?}", vector_double);
