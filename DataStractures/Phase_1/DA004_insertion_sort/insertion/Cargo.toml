@@ -1,0 +1,10 @@
+[package]
+name = "insertion"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+pretty_assertions = "1.4.1"
+
+[dev-dependencies]
+test-case = "3.4.1"
