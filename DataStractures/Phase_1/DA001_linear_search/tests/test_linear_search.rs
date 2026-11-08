@@ -42,7 +42,7 @@ fn test_linear_search_res<T: Ord>(expected: Option<usize>, arr: &[T], item: &T) 
         Ok(e) => assert_eq!(e, expected.unwrap()),
         Err(err) => {
             assert_eq!(err, error_string)
-        }
+        },
     };
 }
 

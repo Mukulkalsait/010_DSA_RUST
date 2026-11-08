@@ -1,9 +1,10 @@
 // Search.rs
 
 use core::error;
-use std::io::Result;
+use std::result::Result;
 
-/// ---------------------------------------------------------------------------------------------------------------------
+use crate::linear_search::char::Char::E;
+
 /// # Linear search to find the first occurrence of an item in a slice.
 ///  - Linear search == sequential search
 /// ## Complexity
@@ -74,9 +75,10 @@ pub fn linear_search_res<T: Ord>(item: &T, arr: &[T]) -> std::result::Result<usi
 /// - Finding all duplicates
 /// - Text search with multiple matches
 /// - Data cleaning and validation
-pub fn linear_search_all<T: Ord>(item: &T, arr: &[T]) -> Vec<usize> {
-    arr.iter().enumerate().filter_map(|(i, data)| if data == item { Some(i) } else { None }).collect()
-}
+pub fn linear_search_all<T: Ord>(item: &T, arr: &[T]) -> Vec<usize> { arr.iter().enumerate().filter_map(|(i, data)| if data == item { Some(i) } else { None }).collect() }
+
+/// THIS FUNCTION IS GIVING Option<Vec<usize>> => which is unnecessary ❌
+pub fn linear_search_all_x<T: Ord>(item: &T, arr: &[T]) -> Option<Vec<usize>> { Some(arr.iter().enumerate().filter_map(|(i, d)| if d == item { Some(i) } else { None }).collect()) }
 
 pub fn linear_search_all_error_handling<T: Ord>(item: &T, arr: &[T]) -> std::result::Result<Vec<usize>, String> {
     let res: Vec<usize> = arr.iter().enumerate().filter_map(|(i, d)| if d == item { Some(i) } else { None }).collect();
@@ -91,9 +93,10 @@ pub fn linear_search_all_error_handling<T: Ord>(item: &T, arr: &[T]) -> std::res
 /// - Partial matching (strings containing substring)
 /// - Range-based searches
 /// - Complex object property matching
-/// 1. What does F: FnMut(&T) -> bool mean?
 ///
+/// 1. What does F: FnMut(&T) -> bool mean?
 /// # This is a trait bound for a generic type F. It tells the compiler: "The parameter predicate must be a function or closure that meets specific criteria."
+///
 ///     F: A generic parameter representing the closure or function you pass in.
 ///     FnMut: A closure trait in Rust. It means this function can be called multiple times and is allowed to mutate (change) variables in its surrounding environment if it wants to.
 ///     (&T): The input argument type that the closure accepts. When called, the closure gets a reference to an element of type T.

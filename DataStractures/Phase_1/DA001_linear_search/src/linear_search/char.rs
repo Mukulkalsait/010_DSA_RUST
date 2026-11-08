@@ -5,9 +5,7 @@ pub struct Cordanets {
     pub z: i32,
 }
 
-pub fn get_position() -> Vec<Cordanets> {
-    vec![Cordanets { x: 0, y: 0, z: 0 }, Cordanets { x: 1, y: 34, z: 99 }, Cordanets { x: 2, y: 3, z: 4 }, Cordanets { x: 122, y: 0, z: 99 }]
-}
+pub fn get_position() -> Vec<Cordanets> { vec![Cordanets { x: 0, y: 0, z: 0 }, Cordanets { x: 1, y: 34, z: 99 }, Cordanets { x: 2, y: 3, z: 4 }, Cordanets { x: 122, y: 0, z: 99 }] }
 
 #[derive(PartialEq, Eq)]
 /// # In Rust, equality and ordering are broken down into a hierarchy. You can't have a total ordering (Ord) without first establishing basic equality (PartialEq).
