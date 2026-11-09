@@ -1,8 +1,8 @@
 # Phase 1: The Bread and Butter
   * Focus: Getting comfortable with [arrays & Vectors], indexing, and basic loops in Rust.
   * Searching: 
-    - Binary search: iterative and recursive.
     - Linear Search
+    - Binary search: iterative and recursive.
   * Simple Sorting: Bubble Sort, Insertion Sort, Selection Sort.
     - Big-O, Big-Theta, Big-Omega.
     - Time and space complexity.
